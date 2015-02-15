@@ -5,4 +5,13 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>Collatz-TeamA-TDD</name>
   <description>Solve the collatz conjecture using TDD</description>
+  
+  <dependencies>
+  	<dependency>
+		<groupId>org.rococoa</groupId>
+		<artifactId>rococoa-cocoa</artifactId>
+		<version>0.5</version>
+	</dependency>
+  </dependencies>
+  
 </project>
