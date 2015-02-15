@@ -29,6 +29,7 @@ public class LongestCollatzSolver
 			inline.add(i);
 			long out = i;
 			
+			//while(generator.hasNext())
 			while(generator.hasNext() && (out >= threshold || solvedNumbers[(int)out] == 0))
 			{
 				out = generator.next();
