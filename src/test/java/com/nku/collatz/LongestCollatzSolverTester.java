@@ -66,6 +66,8 @@ public class LongestCollatzSolverTester
 		Assert.assertThat(837799, Is.is(solver.getLongestChain()));
 	}
 	
+	
+	
 	@Test
 	public void testThresFiveMillion()
 	{
