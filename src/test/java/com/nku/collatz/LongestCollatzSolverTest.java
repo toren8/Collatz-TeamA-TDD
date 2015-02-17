@@ -1,14 +1,11 @@
 package com.nku.collatz;
 
-import java.sql.Timestamp;
-
 import org.hamcrest.core.Is;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.sun.org.apache.xerces.internal.impl.xs.identity.Selector.Matcher;
 
-public class LongestCollatzSolverTester
+public class LongestCollatzSolverTest
 {	
 	@Test
 	public void testThresholdOne()
@@ -61,7 +58,7 @@ public class LongestCollatzSolverTester
 	@Test
 	public void testThresholdBig()
 	{
-		int threshold = 1_000_000;
+		int threshold = 1000000;
 		LongestCollatzSolver solver = new LongestCollatzSolver(threshold);
 		Assert.assertThat(837799, Is.is(solver.getLongestChain()));
 	}
@@ -71,7 +68,7 @@ public class LongestCollatzSolverTester
 	@Test
 	public void testThresFiveMillion()
 	{
-		int threshold = 5_000_000;
+		int threshold = 5000000;
 		long startTime = System.currentTimeMillis();
 		LongestCollatzSolver solver = new LongestCollatzSolver(threshold);
 		Assert.assertThat(3732423, Is.is(solver.getLongestChain()));

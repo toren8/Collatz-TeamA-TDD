@@ -11,18 +11,20 @@ import org.junit.Test;
 
 public class CollatzNumberGeneratorTest
 {
-	
-	private CollatzNumberGenerator	generator;
-	
-	@Before
-	public void createGenerator()
+
+	@Test
+	public void testGetSeed()
 	{
-		generator = new CollatzNumberGenerator(0);
+		long seed = 4;
+		CollatzNumberGenerator	generator = new CollatzNumberGenerator(0);
+		generator.setSeed(seed);
+		Assert.assertThat(seed, Is.is(generator.getSeed()));
 	}
 	
 	@Test
 	public void testBaseCase()
 	{
+		CollatzNumberGenerator	generator = new CollatzNumberGenerator(0);
 		generator.setSeed(1);
 		Assert.assertThat(generator.hasNext(), Is.is(IsEqual.equalTo(false)));
 	}
@@ -30,6 +32,7 @@ public class CollatzNumberGeneratorTest
 	@Test
 	public void testSeedSix()
 	{
+		CollatzNumberGenerator	generator = new CollatzNumberGenerator(0);
 		generator.setSeed(6);
 		
 		List<Long> generatedList = new ArrayList<Long>();
@@ -39,19 +42,20 @@ public class CollatzNumberGeneratorTest
 			generatedList.add(generator.next());
 		}
 		
-		Assert.assertThat(3, Is.is(generatedList.get(0)));
-		Assert.assertThat(10, Is.is(generatedList.get(1)));
-		Assert.assertThat(5, Is.is(generatedList.get(2)));
-		Assert.assertThat(16, Is.is(generatedList.get(3)));
-		Assert.assertThat(8, Is.is(generatedList.get(4)));
-		Assert.assertThat(4, Is.is(generatedList.get(5)));
-		Assert.assertThat(2, Is.is(generatedList.get(6)));
-		Assert.assertThat(1, Is.is(generatedList.get(7)));
+		Assert.assertThat(3L, Is.is(generatedList.get(0)));
+		Assert.assertThat(10L, Is.is(generatedList.get(1)));
+		Assert.assertThat(5L, Is.is(generatedList.get(2)));
+		Assert.assertThat(16L, Is.is(generatedList.get(3)));
+		Assert.assertThat(8L, Is.is(generatedList.get(4)));
+		Assert.assertThat(4L, Is.is(generatedList.get(5)));
+		Assert.assertThat(2L, Is.is(generatedList.get(6)));
+		Assert.assertThat(1L, Is.is(generatedList.get(7)));
 	}
 	
 	@Test
 	public void testSeedThriteen()
 	{
+		CollatzNumberGenerator	generator = new CollatzNumberGenerator(0);
 		generator.setSeed(13);
 		
 		List<Long> generatedList = new ArrayList<Long>();
@@ -61,20 +65,21 @@ public class CollatzNumberGeneratorTest
 			generatedList.add(generator.next());
 		}
 		
-		Assert.assertThat(40, Is.is(generatedList.get(0)));
-		Assert.assertThat(20, Is.is(generatedList.get(1)));
-		Assert.assertThat(10, Is.is(generatedList.get(2)));
-		Assert.assertThat(5, Is.is(generatedList.get(3)));
-		Assert.assertThat(16, Is.is(generatedList.get(4)));
-		Assert.assertThat(8, Is.is(generatedList.get(5)));
-		Assert.assertThat(4, Is.is(generatedList.get(6)));
-		Assert.assertThat(2, Is.is(generatedList.get(7)));
-		Assert.assertThat(1, Is.is(generatedList.get(8)));
+		Assert.assertThat(40L, Is.is(generatedList.get(0)));
+		Assert.assertThat(20L, Is.is(generatedList.get(1)));
+		Assert.assertThat(10L, Is.is(generatedList.get(2)));
+		Assert.assertThat(5L, Is.is(generatedList.get(3)));
+		Assert.assertThat(16L, Is.is(generatedList.get(4)));
+		Assert.assertThat(8L, Is.is(generatedList.get(5)));
+		Assert.assertThat(4L, Is.is(generatedList.get(6)));
+		Assert.assertThat(2L, Is.is(generatedList.get(7)));
+		Assert.assertThat(1L, Is.is(generatedList.get(8)));
 	}
 	
 	@Test
 	public void testSeedThree()
 	{
+		CollatzNumberGenerator	generator = new CollatzNumberGenerator(0);
 		generator.setSeed(3);
 		
 		List<Long> generatedList = new ArrayList<Long>();
@@ -84,12 +89,12 @@ public class CollatzNumberGeneratorTest
 			generatedList.add(generator.next());
 		}
 		
-		Assert.assertThat(10, Is.is(generatedList.get(0)));
-		Assert.assertThat(5, Is.is(generatedList.get(1)));
-		Assert.assertThat(16, Is.is(generatedList.get(2)));
-		Assert.assertThat(8, Is.is(generatedList.get(3)));
-		Assert.assertThat(4, Is.is(generatedList.get(4)));
-		Assert.assertThat(2, Is.is(generatedList.get(5)));
-		Assert.assertThat(1, Is.is(generatedList.get(6)));
+		Assert.assertThat(10L, Is.is(generatedList.get(0)));
+		Assert.assertThat(5L, Is.is(generatedList.get(1)));
+		Assert.assertThat(16L, Is.is(generatedList.get(2)));
+		Assert.assertThat(8L, Is.is(generatedList.get(3)));
+		Assert.assertThat(4L, Is.is(generatedList.get(4)));
+		Assert.assertThat(2L, Is.is(generatedList.get(5)));
+		Assert.assertThat(1L, Is.is(generatedList.get(6)));
 	}
 }
